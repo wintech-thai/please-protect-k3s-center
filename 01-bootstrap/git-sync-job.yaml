@@ -10,7 +10,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: git-sync
-          image: asia-southeast1-docker.pkg.dev/its-artifact-commons/utils/git-sync:v0.0.1
+          image: asia-southeast1-docker.pkg.dev/its-artifact-commons/utils/git-sync:v0.0.2
           command:
             - /bin/sh
             - -c
@@ -54,13 +54,13 @@ spec:
 
             ### Source ###
             - name: GIT_SOURCE_REPO1
-              value: "please-protect-brain-data-plane"
+              value: "please-protect-center-data-plane"
 
             - name: GIT_SOURCE_REPO2
-              value: "please-protect-brain-control-plane"
+              value: ""
 
             - name: GIT_SOURCE_REPO3
-              value: "please-protect-brain-control-plane"
+              value: ""
 
 
             - name: GIT_SOURCE_REF_TYPE1
