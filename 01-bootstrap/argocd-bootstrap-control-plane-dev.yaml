@@ -24,20 +24,20 @@ spec:
           valueFiles:
             - values-files/values-development.yaml
 
-            # PP-Webs
-            - values-files/pp-web/pp-web-00-values.yaml
-            - values-files/pp-web/pp-web-01-development-values.yaml
-            - values-files/pp-web/pp-web-03-development-image-tag.yaml
+            # please-protect-center
+            - values-files/please-protect-center/please-protect-center-00-values.yaml
+            - values-files/please-protect-center/please-protect-center-01-development-values.yaml
+            - values-files/please-protect-center/please-protect-center-03-development-image-tag.yaml
 
-            # PP-Jobs
-            - values-files/pp-job/pp-job-00-values.yaml
-            - values-files/pp-job/pp-job-01-development-values.yaml
-            - values-files/pp-job/pp-job-03-development-image-tag.yaml
+            # onix-jobs
+            - values-files/onix-jobs/onix-jobs-00-values.yaml
+            - values-files/onix-jobs/onix-jobs-01-development-values.yaml
+            - values-files/onix-jobs/onix-jobs-03-development-image-tag.yaml
 
-            # pp-api
-            - values-files/pp-api/pp-api-00-values.yaml
-            - values-files/pp-api/pp-api-01-development-values.yaml
-            - values-files/pp-api/pp-api-03-development-image-tag.yaml
+            # onix-api
+            - values-files/onix-api/onix-api-00-values.yaml
+            - values-files/onix-api/onix-api-01-development-values.yaml
+            - values-files/onix-api/onix-api-03-development-image-tag.yaml
 
       destination:
         name: in-cluster
