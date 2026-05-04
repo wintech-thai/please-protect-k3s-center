@@ -15,8 +15,8 @@ if [ "$MODE" = "dev" ]; then
   #sed -i "s|^\([[:space:]]*\)repoURL: .*|\1repoURL: ${CTRL_PLANE_REMOTE_REPO}|g" argocd-bootstrap-control-plane-dev.yaml
   #sed -i "s|^\([[:space:]]*\)repoURL: .*|\1repoURL: ${CTRL_PLANE_REMOTE_REPO}|g" argocd-bootstrap-control-plane-prod.yaml
 
-  echo "Deploying DEV control plane"
-  kubectl apply -f argocd-bootstrap-control-plane-dev.yaml
+  #echo "Deploying DEV control plane"
+  #kubectl apply -f argocd-bootstrap-control-plane-dev.yaml
 fi
 
 #echo "Deploying PROD control plane"
