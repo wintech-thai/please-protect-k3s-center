@@ -18,5 +18,8 @@ kubectl apply -f ${SRC_FILE}
 SRC_FILE=00-configs/addons-cert-manager.yaml
 kubectl apply -f ${SRC_FILE}
 
+SRC_FILE=00-configs/addons-eck.yaml
+kubectl apply -f ${SRC_FILE}
+
 SRC_FILE=00-configs/addons-gitea.yaml
 kubectl apply -f ${SRC_FILE}
