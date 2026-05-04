@@ -63,3 +63,5 @@ do
 done
 
 kubectl apply -f ${TMP_FILE}
+
+kubectl create secret generic gcp-sa-secret --from-file=sa.json=$HOME/secrets/gcp-sa.json
