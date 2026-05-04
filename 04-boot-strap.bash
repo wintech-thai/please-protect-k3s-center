@@ -8,15 +8,15 @@ kubectl apply -f argocd-ing.yaml
 
 if [ "$MODE" = "dev" ]; then
   # ให้ปรับ repoURL ให้ชี้ตรงไปที่ remote GIT ด้วย เพื่อให้ ArgoCD ไป sync มาจากตรงนั้นแทน
-  DATA_PLANE_REMOTE_REPO=https://github.com/wintech-thai/please-protect-cti-data-plane.git
-  #CTRL_PLANE_REMOTE_REPO=https://github.com/wintech-thai/please-protect-cti-control-plane.git
+  DATA_PLANE_REMOTE_REPO=https://github.com/wintech-thai/please-protect-center-data-plane.git
+  CTRL_PLANE_REMOTE_REPO=https://github.com/wintech-thai/please-protect-center-control-plane.git
 
   sed -i "s|^\([[:space:]]*\)repoURL: .*|\1repoURL: ${DATA_PLANE_REMOTE_REPO}|g" argocd-bootstrap-data-plane.yaml
-  #sed -i "s|^\([[:space:]]*\)repoURL: .*|\1repoURL: ${CTRL_PLANE_REMOTE_REPO}|g" argocd-bootstrap-control-plane-dev.yaml
-  #sed -i "s|^\([[:space:]]*\)repoURL: .*|\1repoURL: ${CTRL_PLANE_REMOTE_REPO}|g" argocd-bootstrap-control-plane-prod.yaml
+  sed -i "s|^\([[:space:]]*\)repoURL: .*|\1repoURL: ${CTRL_PLANE_REMOTE_REPO}|g" argocd-bootstrap-control-plane-dev.yaml
+  sed -i "s|^\([[:space:]]*\)repoURL: .*|\1repoURL: ${CTRL_PLANE_REMOTE_REPO}|g" argocd-bootstrap-control-plane-prod.yaml
 
-  #echo "Deploying DEV control plane"
-  #kubectl apply -f argocd-bootstrap-control-plane-dev.yaml
+  echo "Deploying DEV control plane"
+  kubectl apply -f argocd-bootstrap-control-plane-dev.yaml
 fi
 
 #echo "Deploying PROD control plane"
