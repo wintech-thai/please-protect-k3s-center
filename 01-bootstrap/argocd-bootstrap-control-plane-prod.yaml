@@ -24,6 +24,12 @@ spec:
           valueFiles:
             - values-files/values-production.yaml
 
+            # redis
+            - values-files/redis/redis-00-values.yaml
+
+            # postgresql
+            - values-files/postgresql/postgresql-00-values.yaml
+
             # please-protect-center
             - values-files/please-protect-center/please-protect-center-00-values.yaml
             - values-files/please-protect-center/please-protect-center-01-production-values.yaml
