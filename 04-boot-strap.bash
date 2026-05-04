@@ -19,8 +19,8 @@ if [ "$MODE" = "dev" ]; then
   kubectl apply -f argocd-bootstrap-control-plane-dev.yaml
 fi
 
-#echo "Deploying PROD control plane"
-#kubectl apply -f argocd-bootstrap-control-plane-prod.yaml
+echo "Deploying PROD control plane"
+kubectl apply -f argocd-bootstrap-control-plane-prod.yaml
 
 echo "Deploying data plane"
 kubectl apply -f argocd-bootstrap-data-plane.yaml
