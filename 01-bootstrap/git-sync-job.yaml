@@ -57,10 +57,10 @@ spec:
               value: "please-protect-center-data-plane"
 
             - name: GIT_SOURCE_REPO2
-              value: ""
+              value: "please-protect-center-control-plane"
 
             - name: GIT_SOURCE_REPO3
-              value: ""
+              value: "please-protect-center-control-plane"
 
 
             - name: GIT_SOURCE_REF_TYPE1
