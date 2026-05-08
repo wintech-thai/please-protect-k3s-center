@@ -1,0 +1,56 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: bootstrap-please-payment-dev
+  namespace: argocd
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          custom: "true"
+  template:
+    metadata:
+      name: 'bootstrap-please-payment-dev'
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/wintech-thai/please-payment-control-plane.git
+        targetRevision: "development" #Based on environment
+        path: '.'
+        helm:
+          releaseName: please-payment-dev
+          ignoreMissingValueFiles: true
+          valueFiles:
+            - values-files/values-development.yaml
+
+            # redis
+            - values-files/redis/redis-00-values.yaml
+
+            # postgresql
+            - values-files/postgresql/postgresql-00-values.yaml
+            
+            # please-protect-center
+            #- values-files/please-protect-center/please-protect-center-00-values.yaml
+            #- values-files/please-protect-center/please-protect-center-01-development-values.yaml
+            #- values-files/please-protect-center/please-protect-center-03-development-image-tag.yaml
+
+            # onix-jobs
+            - values-files/onix-jobs/onix-jobs-00-values.yaml
+            - values-files/onix-jobs/onix-jobs-01-development-values.yaml
+            - values-files/onix-jobs/onix-jobs-03-development-image-tag.yaml
+
+            # onix-api
+            - values-files/onix-api/onix-api-00-values.yaml
+            - values-files/onix-api/onix-api-01-development-values.yaml
+            - values-files/onix-api/onix-api-03-development-image-tag.yaml
+
+      destination:
+        name: in-cluster
+        namespace: please-payment-development
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+        syncOptions:
+          - CreateNamespace=true

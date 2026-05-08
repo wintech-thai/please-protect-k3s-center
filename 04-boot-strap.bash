@@ -27,6 +27,12 @@ kubectl apply -f argocd-bootstrap-data-plane.yaml
 
 kubectl apply -f argocd-cluster-secret.yaml
 
+
+echo "Deploying please-payment control plane"
+kubectl apply -f argocd-bootstrap-please-payment-prod.yaml
+kubectl apply -f argocd-bootstrap-please-payment-dev.yaml
+
+
 GIT_USER=$(kubectl get secret initial-secret -n default -o jsonpath='{.data.GIT_USER}' | base64 -d)
 GIT_PASSWORD=$(kubectl get secret initial-secret -n default -o jsonpath='{.data.GIT_PASSWORD}' | base64 -d)
 
