@@ -40,10 +40,10 @@ spec:
             - values-files/please-payment-merchant/please-payment-merchant-01-development-values.yaml
             - values-files/please-payment-merchant/please-payment-merchant-03-development-image-tag.yaml
 
-            # please-payment-noti-hub
-            - values-files/please-payment-noti-hub/please-payment-noti-hub-00-values.yaml
-            - values-files/please-payment-noti-hub/please-payment-noti-hub-01-development-values.yaml
-            - values-files/please-payment-noti-hub/please-payment-noti-hub-03-development-image-tag.yaml
+            # please-payment-web
+            - values-files/please-payment-web/please-payment-web-00-values.yaml
+            - values-files/please-payment-web/please-payment-web-01-development-values.yaml
+            - values-files/please-payment-web/please-payment-web-03-development-image-tag.yaml
 
             # onix-jobs
             - values-files/onix-jobs/onix-jobs-00-values.yaml
