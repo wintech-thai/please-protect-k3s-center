@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: bootstrap-please-payment-prod
+  namespace: argocd
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          custom: "true"
+  template:
+    metadata:
+      name: 'bootstrap-devhubs-webs-prod'
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/wintech-thai/devhubs-webs-control-plane.git
+        targetRevision: "production" #Based on environment
+        path: '.'
+        helm:
+          releaseName: devhubs-webs-prod
+          ignoreMissingValueFiles: true
+          valueFiles:
+            - values-files/values-production.yaml
+
+            # please-payment-web
+            - values-files/please-payment-web/please-payment-web-00-values.yaml
+            - values-files/please-payment-web/please-payment-web-01-production-values.yaml
+            - values-files/please-payment-web/please-payment-web-03-production-image-tag.yaml
+
+      destination:
+        name: in-cluster
+        namespace: devhubs-webs-production
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
