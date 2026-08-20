@@ -40,11 +40,6 @@ spec:
             - values-files/please-payment-merchant/please-payment-merchant-01-production-values.yaml
             - values-files/please-payment-merchant/please-payment-merchant-03-production-image-tag.yaml
 
-            # please-payment-web
-            - values-files/please-payment-web/please-payment-web-00-values.yaml
-            - values-files/please-payment-web/please-payment-web-01-production-values.yaml
-            - values-files/please-payment-web/please-payment-web-03-production-image-tag.yaml
-
             # onix-jobs
             - values-files/onix-jobs/onix-jobs-00-values.yaml
             - values-files/onix-jobs/onix-jobs-01-production-values.yaml
