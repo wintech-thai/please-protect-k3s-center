@@ -29,6 +29,11 @@ spec:
             - values-files/please-payment-web/please-payment-web-01-production-values.yaml
             - values-files/please-payment-web/please-payment-web-03-production-image-tag.yaml
 
+            # please-protect-portal
+            - values-files/please-protect-portal/please-protect-portal-00-values.yaml
+            - values-files/please-protect-portal/please-protect-portal-01-production-values.yaml
+            - values-files/please-protect-portal/please-protect-portal-03-production-image-tag.yaml
+
       destination:
         name: in-cluster
         namespace: devhubs-webs-production
