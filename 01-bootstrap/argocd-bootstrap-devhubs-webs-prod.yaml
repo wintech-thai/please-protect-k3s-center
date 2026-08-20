@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: bootstrap-please-payment-prod
+  name: bootstrap-devhubs-webs-prod
   namespace: argocd
 spec:
   generators:
