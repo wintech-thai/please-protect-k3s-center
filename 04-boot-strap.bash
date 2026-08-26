@@ -40,6 +40,10 @@ echo "Deploying devhubs-webs control plane"
 kubectl apply -f argocd-bootstrap-devhubs-webs-dev.yaml
 kubectl apply -f argocd-bootstrap-devhubs-webs-prod.yaml
 
+echo "Deploying please-scan control plane"
+kubectl apply -f argocd-bootstrap-please-scan-prod.yaml
+kubectl apply -f argocd-bootstrap-please-scan-dev.yaml
+
 
 GIT_USER=$(kubectl get secret initial-secret -n default -o jsonpath='{.data.GIT_USER}' | base64 -d)
 GIT_PASSWORD=$(kubectl get secret initial-secret -n default -o jsonpath='{.data.GIT_PASSWORD}' | base64 -d)
