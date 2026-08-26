@@ -37,6 +37,22 @@ spec:
             - values-files/onix-api/onix-api-01-development-values.yaml
             - values-files/onix-api/onix-api-03-development-image-tag.yaml
 
+
+            # tenant
+            - values-files/please-scan-tenant/please-scan-tenant-00-values.yaml
+            - values-files/please-scan-tenant/please-scan-tenant-01-development-values.yaml
+            - values-files/please-scan-tenant/please-scan-tenant-03-development-image-tag.yaml
+
+            # verify
+            - values-files/please-scan-verify/please-scan-verify-00-values.yaml
+            - values-files/please-scan-verify/please-scan-verify-01-development-values.yaml
+            - values-files/please-scan-verify/please-scan-verify-03-development-image-tag.yaml
+
+            # register
+            - values-files/please-scan-register/please-scan-register-00-values.yaml
+            - values-files/please-scan-register/please-scan-register-01-development-values.yaml
+            - values-files/please-scan-register/please-scan-register-03-development-image-tag.yaml
+
       destination:
         name: in-cluster
         namespace: please-scan-development
