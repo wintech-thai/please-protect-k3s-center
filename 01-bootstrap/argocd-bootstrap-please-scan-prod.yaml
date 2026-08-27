@@ -52,6 +52,10 @@ spec:
             - values-files/please-scan-register/please-scan-register-01-production-values.yaml
             - values-files/please-scan-register/please-scan-register-03-production-image-tag.yaml
 
+            # member
+            - values-files/please-scan-member/please-scan-member-00-values.yaml
+            - values-files/please-scan-member/please-scan-member-01-production-values.yaml
+            - values-files/please-scan-member/please-scan-member-03-production-image-tag.yaml
 
       destination:
         name: in-cluster
