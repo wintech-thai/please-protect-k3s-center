@@ -42,6 +42,12 @@ spec:
             - values-files/please-scan-tenant/please-scan-tenant-01-production-values.yaml
             - values-files/please-scan-tenant/please-scan-tenant-03-production-image-tag.yaml
 
+            # admin
+            - values-files/please-scan-admin/please-scan-admin-00-values.yaml
+            - values-files/please-scan-admin/please-scan-admin-01-production-values.yaml
+            - values-files/please-scan-admin/please-scan-admin-03-production-image-tag.yaml
+
+
             # verify
             - values-files/please-scan-verify/please-scan-verify-00-values.yaml
             - values-files/please-scan-verify/please-scan-verify-01-production-values.yaml
